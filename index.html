@@ -234,13 +234,15 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: white;
+            overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 5px solid white;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Sections */
@@ -439,6 +441,100 @@
             padding: 2rem;
         }
 
+        /* Quotes Section */
+        .quotes {
+            background: #f8f9fa;
+            color: #333;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quotes h2 {
+            color: #333;
+        }
+
+        .quotes h2::after {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .quote-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            position: relative;
+            padding: 3rem;
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: none;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            animation: fadeIn 1s ease-out;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .quote-text {
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mini-quote {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .mini-quote:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .mini-quote-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mini-quote-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: #555;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -475,6 +571,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#quotes">Inspiration</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -494,7 +591,7 @@
             <div class="profile-container">
                 <div class="profile-ring"></div>
                 <div class="profile-pic">
-                    👨‍💻
+                    <img src="images/my-picture.jpg" alt="Emmanuel Profile Picture">
                 </div>
             </div>
         </div>
@@ -558,6 +655,59 @@
                     <h3>School Portal</h3>
                     <p>A comprehensive student management system with course registration, grades tracking, and announcements.</p>
                     <a href="https://student-study-portal-agyemangsamuel.up.railway.app" target="_blank" class="project-link">Visit Live Site →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="quotes" id="quotes">
+        <h2>Daily Inspiration</h2>
+        <div class="quote-container">
+            <div class="quote-box">
+                <div class="quote-icon">💡</div>
+                <div class="quote-text">
+                    "The only way to do great work is to love what you do."
+                </div>
+                <div class="quote-author">— Steve Jobs</div>
+            </div>
+        </div>
+
+        <div class="quotes-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+            <div class="mini-quote">
+                <div class="mini-quote-icon">🚀</div>
+                <div class="mini-quote-text">
+                    "Code is like humor. When you have to explain it, it's bad."
+                </div>
+            </div>
+            <div class="mini-quote">
+                <div class="mini-quote-icon">⚡</div>
+                <div class="mini-quote-text">
+                    "First, solve the problem. Then, write the code."
+                </div>
+            </div>
+            <div class="mini-quote">
+                <div class="mini-quote-icon">🎯</div>
+                <div class="mini-quote-text">
+                    "Learning to code is learning to create and innovate."
+                </div>
+            </div>
+            <div class="mini-quote">
+                <div class="mini-quote-icon">💪</div>
+                <div class="mini-quote-text">
+                    "Every expert was once a beginner. Never stop learning."
+                </div>
+            </div>
+            <div class="mini-quote">
+                <div class="mini-quote-icon">🌟</div>
+                <div class="mini-quote-text">
+                    "The best error message is the one that never shows up."
+                </div>
+            </div>
+            <div class="mini-quote">
+                <div class="mini-quote-icon">🔥</div>
+                <div class="mini-quote-text">
+                    "Great developers are made, not born. Keep building!"
                 </div>
             </div>
         </div>
